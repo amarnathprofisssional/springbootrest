@@ -15,14 +15,14 @@ import org.springframework.transaction.support.TransactionTemplate;
 import javax.sql.DataSource;
 import java.util.Properties;
 
-@Configuration
-@EnableJpaRepositories(basePackages = "com.test.jpa.repository")
+//@Configuration
+//@EnableJpaRepositories(basePackages = "com.test.jpa.repository")
 public class SqlConfiguration {
 
-    @Bean
+    /*@Bean
     public DataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
-        dataSource.setDriverClassName("com.mysql.jdbc.Driver");
+        dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
         dataSource.setUrl("jdbc:mysql://localhost:3306/test");
         dataSource.setUsername("amar");
         dataSource.setPassword("password");
@@ -47,7 +47,7 @@ public class SqlConfiguration {
     private Properties buildHibernateProperties() {
         Properties hibernateProperties = new Properties();
         hibernateProperties.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQLDialect");
-        hibernateProperties.setProperty("hibernate.show_sql", "false");
+        hibernateProperties.setProperty("hibernate.show_sql", "true");
         hibernateProperties.setProperty("hibernate.use_sql_comments", "false");
         hibernateProperties.setProperty("hibernate.format_sql", "false");
         hibernateProperties.setProperty("hibernate.hbm2ddl.auto", "false");
@@ -71,5 +71,5 @@ public class SqlConfiguration {
     @Bean
     public TransactionTemplate transactionTemplate() {
         return new TransactionTemplate(transactionManager());
-    }
+    }*/
 }
